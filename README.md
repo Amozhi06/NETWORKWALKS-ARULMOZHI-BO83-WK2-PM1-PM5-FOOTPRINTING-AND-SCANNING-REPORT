@@ -16,7 +16,7 @@ This report documents my end-to-end execution of **W2-PM1 (Footprinting with mul
 
 * **Pentester Name:** Arulmozhi Muniraj
 * **Program / Batch:** Networkwalks Cybersecurity Program (Batch B083)
-* **Date:** 20 September 2026
+* **Date:** 19 September 2026
 * **Modules Completed:** 
   1. W2-PM1: Footprinting with Multiple Kali Tools (`networkwalks.com`)
   2. W2-PM5: Zenmap-based Network Scanning (`192.168.56.1`)
