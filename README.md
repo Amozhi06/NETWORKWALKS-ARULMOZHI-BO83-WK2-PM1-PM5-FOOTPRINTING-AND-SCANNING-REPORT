@@ -61,7 +61,7 @@ The table below outlines each tool deployed during the Week 2 project phases and
 
 * **1. WHOIS Lookup:** Queried domain registrar databases to inspect domain creation history, expiration dates, and authoritative name server configurations.
   * *Evidence:* 
-  >![WHOIS Output](whois.png.png)`
+  >![WHOIS Output](whois.png)`
 
 * **2. Technology Fingerprinting (WhatWeb):** Executed `whatweb networkwalks.com` from the Kali Linux terminal to uncover active web technologies, server headers, and content management components.
   * *Evidence:* 
