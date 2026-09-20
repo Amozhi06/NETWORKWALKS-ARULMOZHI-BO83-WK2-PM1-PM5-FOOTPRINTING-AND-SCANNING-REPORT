@@ -16,7 +16,7 @@ This report documents my end-to-end execution of **W2-PM1 (Footprinting with mul
 
 * **Pentester Name:** Arulmozhi Muniraj
 * **Program / Batch:** Networkwalks Cybersecurity Program (Batch B083)
-* **Date:** 19 September 2026
+* **Date:** 20 September 2026
 * **Modules Completed:** 
   1. W2-PM1: Footprinting with Multiple Kali Tools (`networkwalks.com`)
   2. W2-PM5: Zenmap-based Network Scanning (`192.168.56.1`)
@@ -47,6 +47,7 @@ The table below outlines each tool deployed during the Week 2 project phases and
 | :--- | :--- |
 | **WHOIS** | Extracted public domain registration details, administrative records, and designated name servers. |
 | **WhatWeb** | Fingerprinted underlying web technologies, server frameworks, content management systems, and plugins. |
+| **Curl** | Inspected HTTP response headers and server configurations. |
 | **Nslookup** | Resolved target domain names to their respective infrastructure IP addresses via DNS. |
 | **Wafw00f** | Detected the presence of Web Application Firewalls protecting the web asset. |
 | **DNSRecon** | Enumerated comprehensive DNS records (NS, MX, service, and infrastructure records). |
@@ -64,17 +65,20 @@ The table below outlines each tool deployed during the Week 2 project phases and
 * **2. Technology Fingerprinting (WhatWeb):** Executed `whatweb networkwalks.com` from the Kali Linux terminal to uncover active web technologies, server headers, and content management components.
   * *Evidence:* `![WhatWeb Output](assets/whatweb.png)`
 
-* **3. DNS Resolution (Nslookup):** Resolved `networkwalks.com` to identify its primary server hosting IP address (`192.232.216.135`).
+* **3. HTTP Header Inspection (Curl):** Inspected HTTP response headers to view server configurations and response structures.
+  * *Evidence:* `![Curl Output](assets/curl.png)`
+
+* **4. DNS Resolution (Nslookup):** Resolved `networkwalks.com` to identify its primary server hosting IP address (`192.232.216.135`).
   * *Evidence:* `![Nslookup Output](assets/nslookup.png)`
 
-* **4. WAF Detection (Wafw00f):** Scanned the web perimeter and successfully identified ModSecurity (SpiderLabs) filtering inbound traffic.
+* **5. WAF Detection (Wafw00f):** Scanned the web perimeter and successfully identified ModSecurity (SpiderLabs) filtering inbound traffic.
   * *Evidence:* `![Wafw00f Output](assets/wafw00f.png)`
 
-* **5. DNS Enumeration (DNSRecon):** Mapped out broader infrastructure entries, mail exchangers, and service records linked to the target domain namespace.
+* **6. DNS Enumeration (DNSRecon):** Mapped out broader infrastructure entries, mail exchangers, and service records linked to the target domain namespace.
   * *Evidence:* `![DNSRecon Output](assets/dnsrecon.png)`
 
 ### Phase 2: Network Scanning & Host Discovery (Zenmap)
-* **6. Zenmap Host Discovery:** Scanned target `192.168.56.1` using a Ping Scan (`nmap -sn 192.168.56.1`) to verify active host availability.
+* **7. Zenmap Host Discovery:** Scanned target `192.168.56.1` using a Ping Scan (`nmap -sn 192.168.56.1`) to verify active host availability.
   * *Evidence:* `![Zenmap Scan Output](assets/zenmap.png)`
 
 ---
@@ -84,10 +88,11 @@ The table below outlines each tool deployed during the Week 2 project phases and
 | # | Risk / Finding | Observation / Evidence | Potential Impact / Context | Risk Level |
 | :---: | :--- | :--- | :--- | :---: |
 | 1 | **Web Technology Exposure** | WhatWeb enumeration details | Attackers analyze exposed software versions to check for known vulnerabilities. | **Medium** |
-| 2 | **Server IP Address Visible** | Nslookup target resolution | Exposes the direct hosting infrastructure location of the web service. | **Low** |
-| 3 | **WAF Architecture Revealed** | Wafw00f detection output | Identifies defensive layers protecting the application perimeter. | **Low** |
-| 4 | **Infrastructure DNS Records** | DNSRecon data dump | Provides structural insight into corporate mail and service mapping. | **Medium** |
-| 5 | **Active Host Response** | Zenmap ping scan confirmation | Establishes live node presence for further network mapping activities. | **Medium** |
+| 2 | **HTTP Header Exposure** | Curl header inspection | Reveals server application details and response behaviors. | **Low** |
+| 3 | **Server IP Address Visible** | Nslookup target resolution | Exposes the direct hosting infrastructure location of the web service. | **Low** |
+| 4 | **WAF Architecture Revealed** | Wafw00f detection output | Identifies defensive layers protecting the application perimeter. | **Low** |
+| 5 | **Infrastructure DNS Records** | DNSRecon data dump | Provides structural insight into corporate mail and service mapping. | **Medium** |
+| 6 | **Active Host Response** | Zenmap ping scan confirmation | Establishes live node presence for further network mapping activities. | **Medium** |
 
 * Note: Findings represent reconnaissance observations and host availability mapping; no exploitation or destructive validation was executed.
 
