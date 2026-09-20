@@ -87,7 +87,8 @@ The table below outlines each tool deployed during the Week 2 project phases and
 * **7. Zenmap Host Discovery:** Scanned target `192.168.56.1` using a Ping Scan (`nmap -sn 192.168.56.1`) to verify active host availability.
   * *Evidence:* 
   >![Zenmap Scan Output](zenmap.png)`
-  * *Additional Scan Report / Topology:* [View PDF Evidence](assets/zenmap-topology.pdf)
+  * *Additional Scan Report / Topology:* 
+  >![View PDF Evidence](zenmap-topology.pdf)
 ---
 
 ## 5. Risk Analysis & Impact Assessment
