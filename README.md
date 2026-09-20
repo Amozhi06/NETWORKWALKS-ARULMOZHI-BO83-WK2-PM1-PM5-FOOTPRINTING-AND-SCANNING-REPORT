@@ -11,7 +11,7 @@ Welcome to my Week 2 Cybersecurity Project repository. Building on the foundatio
 This report documents my end-to-end execution of **W2-PM1 (Footprinting with multiple Kali tools)**, **W2-PM5 (Zenmap-based network scanning)**, and the **W2-PM-FINAL** structured report, completed as part of the Networkwalks internship program (Batch B083).
 
 ### Video Walkthrough
-[Watch Week 2 Video Demonstration](assets/networkwalks%20week2.mp4)
+[Watch Week 2 Video Demonstration](assets/networkwalks-week2-walkthrough.mp4)
 
 ---
 
