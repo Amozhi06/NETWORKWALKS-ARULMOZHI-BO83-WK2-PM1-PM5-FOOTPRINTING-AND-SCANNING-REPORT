@@ -57,23 +57,24 @@ The table below outlines each tool deployed during the Week 2 project phases and
 ## 4. Activities Performed
 
 ### Phase 1: Footprinting & Reconnaissance (`networkwalks.com`)
-* **WHOIS Lookup:** Queried domain registrar databases to inspect domain creation history, expiration dates, and authoritative name server configurations.
+
+* **1. WHOIS Lookup:** Queried domain registrar databases to inspect domain creation history, expiration dates, and authoritative name server configurations.
   * *Evidence:* `![WHOIS Output](assets/whois.png)`
-* **DNS Resolution (Nslookup):** Resolved `networkwalks.com` to identify its primary server hosting IP address (`192.232.216.135`).
-  * *Evidence:* `![Nslookup Output](assets/nslookup.png)`
-* **Technology Fingerprinting (WhatWeb):** Executed `whatweb networkwalks.com` from the Kali Linux terminal to uncover active web technologies, server headers, and content management components.
+
+* **2. Technology Fingerprinting (WhatWeb):** Executed `whatweb networkwalks.com` from the Kali Linux terminal to uncover active web technologies, server headers, and content management components.
   * *Evidence:* `![WhatWeb Output](assets/whatweb.png)`
-* **HTTP Header Inspection (Curl):** Inspected HTTP response headers using `curl -I` to view headers and response structures.
-  * *Evidence:* `![Curl Output](assets/curl.png)`
-* **WAF Detection (Wafw00f):** Scanned the web perimeter and successfully identified ModSecurity (SpiderLabs) filtering inbound traffic.
+
+* **3. DNS Resolution (Nslookup):** Resolved `networkwalks.com` to identify its primary server hosting IP address (`192.232.216.135`).
+  * *Evidence:* `![Nslookup Output](assets/nslookup.png)`
+
+* **4. WAF Detection (Wafw00f):** Scanned the web perimeter and successfully identified ModSecurity (SpiderLabs) filtering inbound traffic.
   * *Evidence:* `![Wafw00f Output](assets/wafw00f.png)`
-* **DNS Enumeration (DNSRecon):** Mapped out broader infrastructure entries, mail exchangers, and service records linked to the target domain namespace.
+
+* **5. DNS Enumeration (DNSRecon):** Mapped out broader infrastructure entries, mail exchangers, and service records linked to the target domain namespace.
   * *Evidence:* `![DNSRecon Output](assets/dnsrecon.png)`
 
 ### Phase 2: Network Scanning & Host Discovery (Zenmap)
-* **Target Scanned:** `192.168.56.1`
-* **Scan Profile:** Ping Scan (`nmap -sn 192.168.56.1`)
-* **Observation:** The scan packet exchange successfully verified target availability, returning status indicators confirming `Host is up` and successfully concluding the diagnostic sweep.
+* **6. Zenmap Host Discovery:** Scanned target `192.168.56.1` using a Ping Scan (`nmap -sn 192.168.56.1`) to verify active host availability.
   * *Evidence:* `![Zenmap Scan Output](assets/zenmap.png)`
 
 ---
