@@ -64,27 +64,27 @@ The table below outlines each tool deployed during the Week 2 project phases and
 
 * **1. WHOIS Lookup:** Queried domain registrar databases to inspect domain creation history, expiration dates, and authoritative name server configurations.
   * *Evidence:* 
-  >![WHOIS Output](assets/whois.png)`
+  >![WHOIS Output](whois.png)`
 
 * **2. Technology Fingerprinting (WhatWeb):** Executed `whatweb networkwalks.com` from the Kali Linux terminal to uncover active web technologies, server headers, and content management components.
   * *Evidence:* 
-  >![WhatWeb Output](assets/whatweb.png)`
+  >![WhatWeb Output](whatweb.png)`
 
 * **3. HTTP Header Inspection (Curl):** Inspected HTTP response headers to view server configurations and response structures.
   * *Evidence:* 
-  >![Curl Output](assets/curl.png)`
+  >![Curl Output](curl.png)`
 
 * **4. DNS Resolution (Nslookup):** Resolved `networkwalks.com` to identify its primary server hosting IP address (`192.232.216.135`).
   * *Evidence:* 
-  >![Nslookup Output](assets/nslookup.png)`
+  >![Nslookup Output](nslookup.png)`
 
 * **5. WAF Detection (Wafw00f):** Scanned the web perimeter and successfully identified ModSecurity (SpiderLabs) filtering inbound traffic.
   * *Evidence:* 
-  >![Wafw00f Output](assets/wafw00f.png)`
+  >![Wafw00f Output](wafw00f.png)`
 
 * **6. DNS Enumeration (DNSRecon):** Mapped out broader infrastructure entries, mail exchangers, and service records linked to the target domain namespace.
   * *Evidence:* 
-  >![DNSRecon Output](assets/dnsrecon.png)`
+  >![DNSRecon Output](dnsrecon.png)`
 
 ### Phase 2: Network Scanning & Host Discovery (Zenmap)
 * **7. Zenmap Host Discovery:** Scanned target `192.168.56.1` using a Ping Scan (`nmap -sn 192.168.56.1`) to verify active host availability.
